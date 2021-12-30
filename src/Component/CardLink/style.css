@@ -1,0 +1,77 @@
+.card-link {
+  margin: 0px 0.5em 1em;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-link .wide-card-container {
+  width: 280px;
+}
+
+.card-link .wide-card-container .large-list-container {
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  border-radius: 4px;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 1px;
+}
+
+.large-list-figure {
+  position: relative;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px;
+  flex: 1 1 0%;
+}
+
+.large-list-figure img {
+  width: 100%;
+  border-radius: 4px 4px 0px 0px;
+  object-fit: cover;
+  height: 130px;
+}
+
+.large-list-content {
+  padding: 0.5em;
+}
+
+.large-list-title span {
+  font-weight: 600;
+  font-size: 0.75rem;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  color: white;
+  margin: 0.25em 0em;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.large-list-progressbar {
+  margin: 1em 0em;
+}
+
+.large-list-count {
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin: 0.25em 0em;
+}
+
+.donation-collected,
+.donation-dayleft {
+  display: flex;
+  flex-direction: column;
+}
+
+.donation-collected span,
+.donation-dayleft span {
+  font-weight: 600;
+  font-size: 12px;
+  color: white;
+}
