@@ -1,0 +1,32 @@
+.action-kind {
+  max-width: 1020px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.action-kind .tile-wrapper {
+  width: 20%;
+  margin: 0px 2.5%;
+  outline: none;
+  cursor: pointer;
+}
+
+.action-kind .tile-wrapper .icon-wrapper {
+  padding: 10px;
+  width: 100%;
+}
+
+.action-kind .tile-wrapper .icon-wrapper .icon {
+  width: 100%;
+  padding-top: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.action-kind .tile-wrapper .icon-wrapper .label-icon {
+  text-align: center;
+}
