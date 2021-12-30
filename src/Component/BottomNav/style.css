@@ -1,0 +1,65 @@
+.bottom-nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  border-width: 1px 0px 0px;
+  border-right-style: initial;
+  border-bottom-style: initial;
+  border-left-style: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  border-image: initial;
+  font-weight: 600;
+  line-height: 13px;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 0.35s ease 0s;
+  text-decoration: none;
+  width: 100%;
+  max-width: 480px;
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+  padding: 10px;
+  font-size: 1em;
+  border-top-style: solid;
+  border-top-color: #494c53;
+  margin: 0px;
+  background-color: #282c34;
+}
+
+.bottom-nav .navbar-default-style {
+  display: inline-block;
+  width: 20%;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.bottom-nav .navbar-default-style .menu-icon-container {
+  position: relative;
+  padding-top: 4px;
+  margin-bottom: 4px;
+}
+
+.bottom-nav .navbar-default-style .menu-icon-container .icon {
+  font-size: 20px;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+  color: #a4a6ac;
+}
+
+.bottom-nav .navbar-default-style span {
+  color: #a4a6ac;
+  white-space: nowrap;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.bottom-nav .navbar-default-style.active .menu-icon-container .icon,
+.bottom-nav .navbar-default-style.active span {
+  color: #61dafb;
+}
