@@ -1,0 +1,11 @@
+.info-campaign .image-slider-wrapper {
+  position: relative;
+  padding-top: 16px;
+  margin-bottom: 1em;
+  height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+    border-radius: 8px;
+}
