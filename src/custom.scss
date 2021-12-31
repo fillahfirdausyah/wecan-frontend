@@ -1,11 +1,24 @@
 $primary: #61dafb;
-$font-family-sans-serif: 'Poppins';
+$font-family-sans-serif: "Poppins";
 
 .btn {
-    color: rgb(58, 58, 58) !important;
+  color: rgb(58, 58, 58) !important;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&display=swap');
-@import '~bootstrap/scss/bootstrap.scss';
+.my-10 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&display=swap");
+@import "~bootstrap/scss/bootstrap.scss";
