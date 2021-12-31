@@ -1,0 +1,33 @@
+.menu-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  -webkit-box-align: center;
+  padding: 1.5em 0.5em;
+  border-top: 0.5px solid rgb(216, 216, 216);
+}
+
+.menu-item .menu-item-icon {
+  font-size: 1.240rem;
+  color: #61dafb;
+}
+
+.menu-item .menu-name {
+  font-weight: 300;
+  flex: 1 1 0%;
+  margin: 0px 1em;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.menu-item .wallet-balance {
+  color: #61dafb;
+  text-align: right;
+  font-weight: bold;
+  margin: 0px 1.2em;
+}
+
+.menu-item .btn-more .icon-more {
+  font-size: 17px;
+  color: rgb(175, 175, 175);
+}
