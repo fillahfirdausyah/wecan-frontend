@@ -1,0 +1,41 @@
+/* .max-w-screen-sm {
+  max-width: 480px !important;
+} */
+
+.home-page {
+  --tw-bg-opacity: 1;
+  background-color: transparent;
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  margin: 0px auto;
+  box-sizing: border-box;
+  top: 60px;
+  padding: 0px 16px 80px;
+  min-height: calc(100vh - 60px);
+}
+
+.header-info {
+  max-width: 1020px;
+  margin: 0px auto;
+  padding-top: 5px;
+}
+
+.header-info h3 {
+  margin: 15px 0px 0px;
+  font-weight: 600;
+  /* font-size: 18px; */
+  line-height: 23px;
+}
+
+.header-info .button-wrapper {
+  padding: 20px 0px;
+}
+
+.header-info .button-wrapper button.donate-now {
+  display: inline-block;
+  border: 0px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+}
