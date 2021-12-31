@@ -5,16 +5,5 @@
   right: 0px;
   top: 0px;
   z-index: 111;
-}
-
-header .header-conten-wrapper {
-  max-width: 480px;
-  width: 100%;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  margin: 0px auto;
   height: 60px;
 }

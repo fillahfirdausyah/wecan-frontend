@@ -4,9 +4,7 @@ import "./style.css";
 function TopNav({ children }) {
   return (
     <div className="top-nav">
-      <header className="bg-primary">
-        <div className="header-conten-wrapper">{children}</div>
-      </header>
+      <header className="bg-primary">{children}</header>
     </div>
   );
 }
