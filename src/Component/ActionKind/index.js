@@ -2,7 +2,6 @@ import React from "react";
 import "./style.css";
 
 // icons
-import { RiHandHeartFill } from "react-icons/ri";
 
 function ActionKind() {
   return (
