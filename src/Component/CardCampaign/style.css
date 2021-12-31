@@ -117,7 +117,6 @@
 }
 
 .list-border {
-  --tw-bg-opacity: 1;
-  background-color: rgba(232, 232, 232, var(--tw-bg-opacity));
-  height: 1px;
+  background-color: rgba(126, 126, 126, 1);
+  height: 0.5px;
 }
