@@ -1,0 +1,59 @@
+.login-page {
+  --tw-bg-opacity: 1;
+  background-color: transparent;
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  margin: 0px auto;
+  box-sizing: border-box;
+  top: 60px;
+  padding: 0px 16px 80px;
+  min-height: calc(100vh - 60px);
+}
+
+.login-page .login-caption {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.login-form-wrapper {
+  margin-top: 50px;
+}
+
+.username-email input {
+  background: 0 0;
+  padding: 10px 10px 10px 0;
+  display: block;
+  width: 100%;
+  border-radius: 0;
+  border-bottom: 1px solid #d8d8d8;
+  overflow: visible;
+  outline: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: white;
+  height: 39px;
+  font-size: 14px;
+}
+
+.username-email .input-label {
+  top: -14px;
+  font-size: 12px;
+  color: #989898;
+  font-weight: 400;
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.btn-login {
+  margin-bottom: 1.24rem;
+}
+
+.btn-login button {
+  color: white !important;
+  font-weight: 500;
+}
