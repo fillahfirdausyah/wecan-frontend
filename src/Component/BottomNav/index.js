@@ -1,20 +1,32 @@
 import React from "react";
-import "./style.css";
+import { NavLink, useLocation } from "react-router-dom";
 
+import "./style.css";
 import { IoHeartCircleSharp } from "react-icons/io5";
 import { MdOutlineCampaign, MdOutlineAccountCircle } from "react-icons/md";
-import { RiFileList3Line } from "react-icons/ri";
 import { CgList } from "react-icons/cg";
 import { GoInfo } from "react-icons/go";
 
 function BottomNav() {
+  const location = useLocation();
+  const { pathname } = location;
+  // const splitLocation = pathname.split("/");
+
   return (
     <div className="bottom-nav">
-      <div className="navbar-home navbar-default-style active">
-        <div className="menu-icon-container">
-          <IoHeartCircleSharp className="icon" />
-        </div>
-        <span>Donasi</span>
+      <div
+        className={
+          pathname == "/"
+            ? "navbar-home navbar-default-style active"
+            : "navbar-home navbar-default-style"
+        }
+      >
+        <NavLink to="/">
+          <div className="menu-icon-container">
+            <IoHeartCircleSharp className="icon" />
+          </div>
+          <span>Donasi</span>
+        </NavLink>
       </div>
       <div className="navbar-make-campaign navbar-default-style">
         <div className="menu-icon-container">
@@ -34,11 +46,19 @@ function BottomNav() {
         </div>
         <span>Tentang Kami</span>
       </div>
-      <div className="navbar-my-account navbar-default-style">
-        <div className="menu-icon-container">
-          <MdOutlineAccountCircle className="icon" />
-        </div>
-        <span>Akun</span>
+      <div
+        className={
+          pathname == "/user"
+            ? "navbar-home navbar-default-style active"
+            : "navbar-home navbar-default-style"
+        }
+      >
+        <NavLink to="/user">
+          <div className="menu-icon-container">
+            <MdOutlineAccountCircle className="icon" />
+          </div>
+          <span>Akun</span>
+        </NavLink>
       </div>
     </div>
   );
