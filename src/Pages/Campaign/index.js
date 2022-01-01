@@ -11,7 +11,7 @@ function CampaignPage() {
       <TopNav>
         <HeaderNav title="Campaign" />
       </TopNav>
-      <div className="list-campaign">
+      <div className="main-page-wrapper list-campaign">
         <CardCampaign />
         <CardCampaign />
         <CardCampaign />

@@ -10,7 +10,7 @@ function LoginPage() {
       <TopNav>
         <HeaderNav title="Masuk" />
       </TopNav>
-      <div className="login-page">
+      <div className="main-page-wrapper login-page">
         <div className="px-8 py-6">
           <div>
             <h3 className="login-caption">

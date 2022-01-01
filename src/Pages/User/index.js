@@ -18,7 +18,7 @@ function UserPage() {
       <TopNav>
         <HeaderNav title="Account" />
       </TopNav>
-      <div className="user-page">
+      <div className="main-page-wrapper user-page">
         <div className="profile-section">
           <img
             src="https://i.pinimg.com/736x/12/1c/55/121c55b356c4dd0ad7a743b70770d323.jpg"

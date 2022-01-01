@@ -28,11 +28,19 @@ function BottomNav() {
           <span>Donasi</span>
         </NavLink>
       </div>
-      <div className="navbar-make-campaign navbar-default-style">
-        <div className="menu-icon-container">
-          <MdOutlineCampaign className="icon" />
-        </div>
-        <span>Galang Dana</span>
+      <div
+        className={
+          pathname == "/make/campaign"
+            ? "navbar-home navbar-default-style active"
+            : "navbar-home navbar-default-style"
+        }
+      >
+        <NavLink to="/make/campaign">
+          <div className="menu-icon-container">
+            <MdOutlineCampaign className="icon" />
+          </div>
+          <span>Galang Dana</span>
+        </NavLink>
       </div>
       <div className="navbar-my-donation navbar-default-style">
         <div className="menu-icon-container">
