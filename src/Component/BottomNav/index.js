@@ -42,11 +42,19 @@ function BottomNav() {
           <span>Galang Dana</span>
         </NavLink>
       </div>
-      <div className="navbar-my-donation navbar-default-style">
-        <div className="menu-icon-container">
-          <CgList className="icon" />
-        </div>
-        <span>Donasi Saya</span>
+      <div
+        className={
+          pathname == "/my-donations"
+            ? "navbar-home navbar-default-style active"
+            : "navbar-home navbar-default-style"
+        }
+      >
+        <NavLink to="/my-donations">
+          <div className="menu-icon-container">
+            <CgList className="icon" />
+          </div>
+          <span>Donasi Saya</span>
+        </NavLink>
       </div>
       <div className="navbar-about-us navbar-default-style">
         <div className="menu-icon-container">
