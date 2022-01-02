@@ -3,7 +3,6 @@ $font-family-sans-serif: "Poppins";
 
 .main-page-wrapper {
   --tw-bg-opacity: 1;
-  background-color: transparent;
   position: relative;
   max-width: 480px;
   width: 100%;
@@ -38,6 +37,13 @@ $font-family-sans-serif: "Poppins";
   margin: 0px -1rem !important;
   border-top: 7px solid #1d2025 !important;
   background-color: transparent;
+}
+
+.form-breaker {
+  --border-opacity: 1;
+  border-color: #e8e8e8;
+  border-color: rgba(232, 232, 232, var(--border-opacity));
+  width: 100% !important;
 }
 
 hr {
