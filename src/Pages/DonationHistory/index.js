@@ -3,6 +3,7 @@ import "./style.css";
 
 import TopNav from "../../Component/TopNav";
 import HeaderNav from "../../Component/HeaderNav";
+import CardDonationHistory from "../../Component/CardDonationHistory";
 import BottomNav from "../../Component/BottomNav";
 
 function DonationHistoryPage() {
@@ -16,22 +17,10 @@ function DonationHistoryPage() {
           <div className="donation-history-header">
             <h4 className="riwayat-donasi">Riwayat Donasi</h4>
           </div>
-          <div className="donation-history-content">
-            <img
-              src="https://img.kitabisa.cc/size/664x357/08309532-2469-4c9b-8315-1a978412effd.jpg"
-              alt=""
-            />
-            <div className="campaign-detail">
-              <span className="campaign-title">
-                Sedekah untuk pedagang lansia dijalan
-              </span>
-              <div className="campaign-donation-date">
-                <span>07 Des 2021</span>
-                <span className="donation-amount">Rp63.000</span>
-              </div>
-            </div>
-            <div className="donation-status">Berhasil</div>
-          </div>
+          <CardDonationHistory />
+          <CardDonationHistory />
+          <CardDonationHistory />
+          <CardDonationHistory />
         </div>
       </div>
       <BottomNav />

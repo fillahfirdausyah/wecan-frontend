@@ -17,57 +17,6 @@
   font-size: 1rem;
 }
 
-.donation-history-container .donation-history-content {
-  height: 110px;
-  max-width: 480px;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
-}
-
-.donation-history-container .donation-history-content img {
-  width: 65px;
-  height: 65px;
-  margin-right: 12px;
-  border-radius: 4px;
-  object-fit: cover;
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-.donation-history-container .donation-history-content .campaign-detail {
-  margin-right: 10px;
-  height: 70px;
-  display: flex;
-  flex: 1 1 0%;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-}
-
-.donation-history-container
-  .donation-history-content
-  .campaign-detail
-  .campaign-title {
-  font-size: 0.96em;
-  font-weight: 600;
-}
-
-.donation-history-container .campaign-donation-date {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
-  font-size: 10px;
-  margin: 0.25em 0em;
-  -webkit-box-align: center;
-}
-
-.donation-history-container .campaign-donation-date .donation-amount {
-  margin-left: 1em;
-  font-weight: 600;
-}
-
 .donation-history-container .donation-status {
   text-align: center;
   width: 70px;
