@@ -1,1 +1,32 @@
+.campaign-detail .see-all-prayers-button {
+  margin: 1em auto;
+  width: 160px;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 9px;
+  font-weight: 400;
+}
 
+.donation-card-wrapper {
+  padding: 16px 16px;
+  word-break: break-word;
+}
+
+.donation-card-wrapper h4 {
+  font-weight: 700;
+  margin: 0px 0px 10px;
+  font-size: 1rem;
+}
+
+.campaign-detail .button-container {
+  margin: 16px auto 0px 0px;
+}
+
+.campaign-detail .button-container .btn-donate-now {
+  background-color: rgb(218, 51, 107);
+  color: white !important;
+  font-weight: 400;
+}
