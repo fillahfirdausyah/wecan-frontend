@@ -1,0 +1,42 @@
+.donation-card-body {
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+}
+
+.donation-card-body img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.donation-card-body .donation-card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  margin-left: 10px;
+}
+
+.donation-card-body .donation-card-info .donation-card-username {
+  color: rgb(0, 174, 239);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.donation-card-body .donation-card-info .donation-card-amount {
+  font-weight: 600;
+}
+
+.donation-card-body .donation-card-info .donation-card-time {
+  color: rgb(152, 152, 152);
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.donation-card-body .donation-card-info .donation-card-amount-wrapper {
+  font-size: 14.5px;
+}
