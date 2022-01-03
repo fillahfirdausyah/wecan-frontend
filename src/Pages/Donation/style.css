@@ -1,0 +1,178 @@
+.donation-amount-container {
+  box-sizing: border-box;
+  border: 1px solid rgb(232, 232, 232);
+  border-radius: 6px;
+  margin: 16px 0px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.donation-amount-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.donation-amount-wrapper p {
+  color: rgb(218, 218, 218);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 0px;
+}
+
+.donation-amount-wrapper .donation-input-container {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.donation-amount-wrapper .donation-input-container span {
+  position: absolute;
+  display: block;
+  font-weight: 700;
+  line-height: 1;
+  padding-left: 0.875rem;
+  font-size: 1.5em;
+  color: white;
+}
+
+.donation-amount-wrapper .donation-input-container form {
+  width: 100%;
+}
+
+.donation-amount-wrapper
+  .donation-input-container
+  form
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.donation-amount-wrapper .donation-input-container form input {
+  width: 100%;
+  --tw-text-opacity: 1;
+  color: rgb(223, 222, 222);
+  --tw-bg-opacity: 1;
+  background-color: #333742;
+  --tw-border-opacity: 1;
+  border-color: rgba(242, 243, 244, var(--tw-border-opacity));
+  text-align: right;
+  font-weight: 700;
+  border-style: none;
+  padding: 7.5px 15px 7.5px 1.9em;
+  font-size: 1.5rem;
+  font-family: inherit;
+  border-radius: 5px;
+  height: 52px;
+  outline: none;
+}
+
+.donation-amount-wrapper .wallet-balance {
+  text-align: left;
+  font-size: 0.75rem;
+  color: rgb(201, 200, 200);
+  line-height: 1.5rem;
+  display: block;
+  margin-block: 1em;
+  margin-inline: 0px;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 15px auto;
+}
+
+.user-info-container .user-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  line-height: 22px;
+}
+
+.user-info-container .user-email {
+  font-size: 0.875rem;
+  --tw-text-opacity: 1;
+  color: rgba(152, 152, 152, var(--tw-text-opacity));
+  margin-bottom: 0.625rem;
+  line-height: 19px;
+}
+
+.user-info-container label {
+  font-size: 0.75rem;
+  line-height: 22px;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin: 0.625rem 0px;
+}
+
+.user-info-container label span {
+  line-height: 1.5;
+  font-size: 1em;
+  margin-right: 0.5em;
+}
+
+.form-switch .form-check-input {
+  height: 17px;
+}
+
+.donation-amount p {
+  display: block;
+  margin-block: 1em;
+  margin-inline: 0px;
+}
+
+.donation-amount .comment-container {
+  position: relative;
+  width: 100%;
+  margin: 1em auto;
+}
+
+.donation-amount .comment-container textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  border-width: 1px;
+  border-style: solid;
+  --tw-bg-opacity: 1;
+  background-color: transparent;
+  padding: 0.75em 0.625em;
+  min-height: 150px;
+  border-color: rgb(204, 208, 211);
+  font-family: inherit;
+  border-radius: 5px;
+  outline: none;
+  color: white;
+}
+
+.donation-amount .button-subtmit-container {
+  right: 0px;
+  position: fixed;
+  margin-top: 1.25rem;
+  bottom: 0px;
+  width: 100%;
+}
+
+.donation-amount .button-subtmit-container .button-submit-inner {
+  max-width: 480px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 1em;
+}
+
+.donation-amount .button-subtmit-container .button-submit-inner button {
+  appearance: none;
+  --tw-bg-opacity: 1;
+  background-color: rgba(218, 51, 107, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  border-style: none;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  width: 100%;
+  height: 2.5rem;
+  line-height: 1.375;
+  font-weight: 700;
+  font-size: 15px;
+}
