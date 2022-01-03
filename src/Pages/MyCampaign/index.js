@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 
+import { Link } from "react-router-dom";
+
 import TopNav from "../../Component/TopNav";
 import HeaderNav from "../../Component/HeaderNav";
 import BottomNav from "../../Component/BottomNav";
@@ -15,7 +17,9 @@ function MyCampaignPage() {
       <div className="main-page-wrapper my-campaign">
         <div className="my-campaign-header">
           <h3>Campaign Saya</h3>
-          <p>Pilih salah satu campagin anda</p>
+          <Link className="btn btn-primary btn-sm" to="/make/campaign">
+            Galang Dana
+          </Link>
         </div>
         <div className="nav-tab-wrapper">
           <div className="nav-tab-container">
