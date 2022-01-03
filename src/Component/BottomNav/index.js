@@ -30,12 +30,12 @@ function BottomNav() {
       </div>
       <div
         className={
-          pathname == "/make/campaign"
+          pathname == "/my-campaign"
             ? "navbar-home navbar-default-style active"
             : "navbar-home navbar-default-style"
         }
       >
-        <NavLink to="/make/campaign">
+        <NavLink to="/my-campaign">
           <div className="menu-icon-container">
             <MdOutlineCampaign className="icon" />
           </div>
