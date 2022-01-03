@@ -1,0 +1,99 @@
+.fundraiser-container {
+  padding: 16px 16px;
+  word-break: break-word;
+}
+
+.fundraiser-container h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.fundraiser-container .fundraiser-info-container {
+  margin: 1rem 0px;
+  padding: 1rem 1rem 0.5rem;
+  width: 100%;
+  border: 0.5px solid rgb(232, 232, 232);
+  -webkit-box-align: center;
+  align-items: center;
+  border-radius: 0.25rem;
+}
+
+.fundraiser-container .fundraiser-info-container .fundraiser-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0px 0px 0.75rem;
+}
+
+.fundraiser-container .fundraiser-info-container .fundraiser-user-container {
+  display: flex;
+  margin: 16px 0px px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.fundraiser-container .fundraiser-user-container .fundraiser-avatar {
+  margin-right: 12px;
+  white-space: nowrap;
+}
+
+.fundraiser-container .fundraiser-user-container .fundraiser-avatar img {
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+  border-radius: 50px;
+}
+
+.fundraiser-container .fundraiser-user-container .fundraiser-info {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  flex: 1 1 0%;
+  width: 100%;
+}
+
+.fundraiser-container .fundraiser-info .fundraiser-name-container {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+.fundraiser-container
+  .fundraiser-info
+  .fundraiser-name-container
+  .fundraiser-name {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: bold;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.fundraiser-container
+  .fundraiser-info
+  .fundraiser-name-container
+  .fundraiser-name
+  p {
+  margin: 0px 0.25rem 0px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fundraiser-container
+  .fundraiser-info
+  .fundraiser-name-container
+  .fundraiser-name
+  img {
+  width: auto;
+}
+
+.fundraiser-container .fundraiser-info .fundraiser-status {
+  color: rgb(152, 152, 152);
+  display: flex;
+  font-size: 12px;
+}
