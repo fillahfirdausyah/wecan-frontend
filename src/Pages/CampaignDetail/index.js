@@ -5,6 +5,8 @@ import TopNav from "../../Component/TopNav";
 import HeaderNav from "../../Component/HeaderNav";
 import CardInfo from "../../Component/CampaignDetail/CardInfo";
 import FundraiserInfo from "../../Component/CampaignDetail/FundraiserInfo";
+import Story from "../../Component/CampaignDetail/Story";
+import CardPyrayers from "../../Component/CampaignDetail/Prayers";
 
 function CampaignDetailPage() {
   return (
@@ -20,6 +22,16 @@ function CampaignDetailPage() {
         <hr className="section-breaker" />
         <FundraiserInfo />
         <hr className="section-breaker" />
+        <Story />
+        <hr className="section-breaker" />
+        <div className="card-prayers-wrapper">
+          <div className="prayers-section-header">
+            <h4>Doa-doa #OrangBaik</h4>
+          </div>
+          <CardPyrayers />
+          <CardPyrayers />
+          <CardPyrayers />
+        </div>
       </div>
     </div>
   );
