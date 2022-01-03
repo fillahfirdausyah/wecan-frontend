@@ -15,6 +15,26 @@
   -webkit-box-pack: start;
 }
 
+.header-nav.detail-campaign {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0px auto;
+  max-width: 480px;
+  height: 100%;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  font-size: 1rem;
+  font-weight: 600px;
+  padding: 0px 1em;
+  line-height: 22px;
+  -webkit-box-align: center;
+  -webkit-box-pack: start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .header-nav .btn-back {
   cursor: pointer;
   color: rgba(255, 255, 255, 1);
@@ -24,7 +44,7 @@
 }
 
 .header-nav .btn-back .icon {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .header-nav span {
@@ -32,4 +52,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.header-nav span.detail-campaign {
+  font-size: 15px;
 }
