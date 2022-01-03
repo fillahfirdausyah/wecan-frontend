@@ -1,0 +1,21 @@
+.story-wrapper {
+  padding: 16px 16px;
+}
+
+.story-wrapper .story-info .story-title {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.story-wrapper .story-info .story-title h4 {
+  font-weight: 700;
+  margin: 0px 0px 10px;
+}
+
+.story-wrapper .story-info .story-title p {
+  margin-left: 0px;
+  color: rgb(152, 152, 152);
+  font-size: 1em;
+}
