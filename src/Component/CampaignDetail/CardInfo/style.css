@@ -1,0 +1,77 @@
+.card-campaign-detail-info .hero-image-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.card-campaign-detail-info .hero-image-container img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  z-index: 2;
+  max-width: 100%;
+  width: 100%;
+  margin: 0px auto 5px;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.card-campaign-detail-info .content-wrapper {
+  padding: 0px 16px;
+  word-break: break-word;
+}
+
+.card-campaign-detail-info .content-wrapper h1 {
+  color: rgb(240, 238, 238);
+  font-weight: 700;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.card-campaign-detail-info .donation {
+  margin-bottom: 8px;
+}
+
+.card-campaign-detail-info .donation .donation-received {
+  color: #61dafb;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.card-campaign-detail-info .donation .donation-goal {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.card-campaign-detail-info .info {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.card-campaign-detail-info .info span {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.card-campaign-detail-info .info span strong {
+  font-size: 16px;
+}
+
+.card-campaign-detail-info .button-container {
+  margin: 16px auto 20px 0px;
+}
+
+.card-campaign-detail-info .button-container .btn-donate-now {
+  background-color: rgb(218, 51, 107);
+  color: white !important;
+  font-weight: 400;
+}
