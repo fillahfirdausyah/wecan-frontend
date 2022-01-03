@@ -8,6 +8,7 @@ import MenuItem from "../../Component/MenuItem";
 
 import { IoWalletOutline } from "react-icons/io5";
 import { BsGear } from "react-icons/bs";
+import { MdOutlineCampaign } from "react-icons/md";
 import { AiOutlineHistory } from "react-icons/ai";
 import { GoInfo } from "react-icons/go";
 import { FiLogOut } from "react-icons/fi";
@@ -34,8 +35,8 @@ function UserPage() {
         <MenuItem title="Dompet Kebaikan" wallet={true}>
           <IoWalletOutline className="menu-item-icon" />
         </MenuItem>
-        <MenuItem title="Pengaturan">
-          <BsGear className="menu-item-icon" />
+        <MenuItem title="Campaign Saya">
+          <MdOutlineCampaign className="menu-item-icon" />
         </MenuItem>
         <MenuItem title="Riwayat Donasi">
           <AiOutlineHistory className="menu-item-icon" />
@@ -43,7 +44,10 @@ function UserPage() {
         <MenuItem title="Tentang Kita">
           <GoInfo className="menu-item-icon" />
         </MenuItem>
-        <MenuItem title="Akhiri Sesi">
+        <MenuItem title="Pengaturan">
+          <BsGear className="menu-item-icon" />
+        </MenuItem>
+        <MenuItem title="Logout">
           <FiLogOut className="menu-item-icon" />
         </MenuItem>
       </div>
