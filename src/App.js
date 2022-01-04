@@ -1,9 +1,12 @@
 import Router from "./Route";
+import { AuthProvider } from "./Helpers/AuthContext";
 
 function App() {
   return (
     <div className="App">
-      <Router />
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
     </div>
   );
 }
