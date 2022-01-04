@@ -1,20 +1,25 @@
 import React from "react";
 import "./style.css";
 
+import { useHistory } from "react-router-dom";
+
 import Moment from "react-moment";
 import "moment/locale/id";
+
 import CurrencyFormat from "react-currency-format";
 import ProgressBar from "@ramonak/react-progress-bar";
 
 function CardLink({ data }) {
-  const collected = data.collected;
-  const goal = data.goal;
-
-  const current = (collected / goal) * 100;
+  const current = (data.collected / data.goal) * 100;
   const today = new Date();
+  const history = useHistory();
+
+  const redirectTo = (url) => {
+    history.push(`/campaign/${url}`);
+  };
 
   return (
-    <div className="card-link">
+    <div className="card-link" onClick={() => redirectTo(data.url)}>
       <div className="wide-card-container">
         <div className="large-list-container">
           <figure className="large-list-figure">
