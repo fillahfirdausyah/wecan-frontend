@@ -66,11 +66,11 @@
 .donation-collected,
 .donation-dayleft {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .donation-collected span,
-.donation-dayleft span {
+.donation-dayleft span, .donation-dayleft p {
   font-weight: 600;
   font-size: 12px;
   color: white;

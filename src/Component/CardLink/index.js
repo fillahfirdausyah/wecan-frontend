@@ -1,13 +1,17 @@
 import React from "react";
-import ProgressBar from "@ramonak/react-progress-bar";
-
 import "./style.css";
+
+import Moment from "react-moment";
+import "moment/locale/id";
+import CurrencyFormat from "react-currency-format";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 function CardLink({ data }) {
   const collected = data.collected;
   const goal = data.goal;
 
   const current = (collected / goal) * 100;
+  const today = new Date();
 
   return (
     <div className="card-link">
@@ -33,10 +37,21 @@ function CardLink({ data }) {
             </div>
             <div className="large-list-count">
               <div className="donation-collected">
-                <span>{data.collected}</span>
+                <CurrencyFormat
+                  decimalSeparator={""}
+                  isNumericString={true}
+                  value={data.collected}
+                  displayType={"text"}
+                  thousandSeparator="."
+                  prefix={"Rp "}
+                  renderText={(value) => <span>{value}</span>}
+                />
               </div>
               <div className="donation-dayleft">
-                <span>{data.over}</span>
+                <Moment diff={today} element="span" unit="days" locale="id">
+                  {data.over}
+                </Moment>
+                <p>&nbsp;hari lagi</p>
               </div>
             </div>
           </div>
