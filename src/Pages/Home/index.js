@@ -12,7 +12,7 @@ function HomePage() {
   const history = useHistory();
 
   const toCampaign = () => {
-    history.push("/campaign");
+    history.push("/campaign/all");
   };
 
   return (
