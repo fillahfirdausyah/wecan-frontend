@@ -46,6 +46,14 @@ function MakeCampaignPage() {
                 <h3>Cerita</h3>
                 <textarea name=""></textarea>
               </div>
+              <div className="campaign-form-controll mb-3">
+                <h3>Nama link campaign</h3>
+                <input
+                  type="text"
+                  className="info-form"
+                  placeholder="nama link campaign, huruf kecil dan tanpa spasi"
+                />
+              </div>
               <div className="campaign-form-controll">
                 <h3>Foto galang dana</h3>
                 <input type="file" className="info-form" placeholder="Rp.." />
