@@ -2,25 +2,50 @@ import React from "react";
 import "./style.css";
 
 import ProgressBar from "@ramonak/react-progress-bar";
+import CurrencyFormat from "react-currency-format";
+import Moment from "react-moment";
+import "moment/locale/id";
 
-function CardInfo() {
+function CardInfo({ data }) {
+  const presentage = (data.collected / data.goal) * 100;
   return (
     <div className="card-campaign-detail-info">
       <div className="hero-image-container">
         <img
-          src="https://img.kitabisa.cc/size/664x357/08309532-2469-4c9b-8315-1a978412effd.jpg"
+          src={`http://localhost:8000/image/campaign/${data.cover}`}
           alt=""
         />
       </div>
       <div className="content-wrapper">
-        <h1>Darurat Bencana! Sedekah bantu Warga di Aceh</h1>
+        <h1>{data.title}</h1>
         <div className="donation">
-          <span className="donation-received">Rp 32.022.226</span>
-          <div className="donation-goal">Terkumpul dari Rp 50.000.000</div>
+          <span className="donation-received">
+            <CurrencyFormat
+              decimalSeparator={""}
+              isNumericString={true}
+              value={data.collected}
+              displayType={"text"}
+              thousandSeparator="."
+              prefix={"Rp "}
+              renderText={(value) => <>{value}</>}
+            />
+          </span>
+          <div className="donation-goal">
+            Terkumpul dari{" "}
+            <CurrencyFormat
+              decimalSeparator={""}
+              isNumericString={true}
+              value={data.goal}
+              displayType={"text"}
+              thousandSeparator="."
+              prefix={"Rp "}
+              renderText={(value) => <>{value}</>}
+            />
+          </div>
         </div>
         <div className="progressbar">
           <ProgressBar
-            completed={65}
+            completed={presentage}
             bgColor="#61dafb"
             customLabel=" "
             height="4px"
@@ -30,9 +55,12 @@ function CardInfo() {
           <span>
             <strong>2170</strong> Donasi
           </span>
-          <span>
-            <strong>6</strong> hari lagi
-          </span>
+          <div>
+            <Moment diff={new Date()} element="strong" unit="days" locale="id">
+              {data.over}
+            </Moment>
+            <span>&nbsp; hari lagi</span>
+          </div>
         </div>
         <div className="button-container">
           <button className="btn btn-donate-now w-100">Donasi Sekarang!</button>

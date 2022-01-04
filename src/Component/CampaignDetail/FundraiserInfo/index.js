@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
 
-function FundraiserInfo() {
+function FundraiserInfo({ data }) {
   return (
     <div className="fundraiser-container">
       <h3>Informasi Penggalangan Dana</h3>
       <div className="fundraiser-info-container">
-        <div className="fundraiser-title">Penggalang Dana</div> 
+        <div className="fundraiser-title">Penggalang Dana</div>
         <div className="fundraiser-user-container">
           <div className="fundraiser-avatar">
             <img
@@ -17,7 +17,7 @@ function FundraiserInfo() {
           <div className="fundraiser-info">
             <div className="fundraiser-name-container">
               <div className="fundraiser-name">
-                <p>Fillah Firdausyah</p>
+                <p>{data.username}</p>
                 <img
                   src="https://assets.kitabisa.cc/images/icons/icon_verified.svg"
                   alt=""

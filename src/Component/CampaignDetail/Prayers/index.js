@@ -1,10 +1,13 @@
 import React from "react";
 import "./style.css";
 
+import Moment from "react-moment";
+import "moment/locale/id";
+
 import { AiOutlineHeart } from "react-icons/ai";
 import { RiShareForwardFill } from "react-icons/ri";
 
-function CardPyrayers() {
+function CardPyrayers({ data }) {
   return (
     <div>
       <div className="card-prayers-container">
@@ -17,17 +20,17 @@ function CardPyrayers() {
               />
             </figure>
             <div className="card-prayers-user-info">
-              <p>Anonim</p>
+              <p>{data.username}</p>
               <div className="card-prayers-user-subinfo">
-                <span>42 menit yang lalu</span>
+                <Moment element="span" fromNow locale="id">
+                {data.created_at}
+                </Moment>
+                {/* <span>42 menit yang lalu</span> */}
               </div>
             </div>
           </div>
           <div className="card-prayers-content">
-            <p className="card-prayers-body">
-              semoga bermanfaat dan semoga saya diberi kelancaran dan kemudahan
-              dalam proses pemberkasan cpns. aamiin
-            </p>
+            <p className="card-prayers-body">{data.content}</p>
             <p className="card-prayers-counter">
               <span>10 orang </span>
               mengaminkan doa ini
