@@ -13,12 +13,11 @@
   -webkit-box-pack: center;
   -webkit-box-align: center;
   margin: 0px 1.25rem 0px 0px;
-  flex: 1 1 0%;
   z-index: 0;
 }
 
 .card-campaign figure .image-campaign-wrapper {
-  width: 220px;
+  width: 210px;
   height: 100%;
   z-index: 0;
   border-radius: 0.375rem;
@@ -44,6 +43,7 @@
   flex-direction: column;
   -webkit-box-pack: justify;
   justify-content: space-between;
+  width: 100%;
 }
 
 .info-campagin-content .title-campaign {
