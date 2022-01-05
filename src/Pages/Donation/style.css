@@ -35,19 +35,19 @@
   color: white;
 }
 
-.donation-amount-wrapper .donation-input-container form {
+.donation-amount-wrapper .donation-input-container .donation-input-form {
   width: 100%;
 }
 
 .donation-amount-wrapper
   .donation-input-container
-  form
+  .donation-input-form
   input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.donation-amount-wrapper .donation-input-container form input {
+.donation-amount-wrapper .donation-input-container .donation-input-form input {
   width: 100%;
   --tw-text-opacity: 1;
   color: rgb(223, 222, 222);
