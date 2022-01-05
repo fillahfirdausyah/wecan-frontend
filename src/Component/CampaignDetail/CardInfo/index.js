@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 
+import { Link } from "react-router-dom";
+
 import ProgressBar from "@ramonak/react-progress-bar";
 import CurrencyFormat from "react-currency-format";
 import Moment from "react-moment";
@@ -63,7 +65,12 @@ function CardInfo({ data }) {
           </div>
         </div>
         <div className="button-container">
-          <button className="btn btn-donate-now w-100">Donasi Sekarang!</button>
+          <Link
+            to={`/campaign/${data.url}/donation`}
+            className="btn btn-donate-now w-100"
+          >
+            Donasi Sekarang!
+          </Link>
         </div>
       </div>
     </div>

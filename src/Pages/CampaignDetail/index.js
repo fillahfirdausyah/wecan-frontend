@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 
 import api from "../../Helpers/ApiEndpoint";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import { MdKeyboardArrowDown } from "react-icons/md";
 
@@ -78,7 +78,12 @@ function CampaignDetailPage() {
         </div>
         <hr className="section-breaker" />
         <div className="button-container">
-          <button className="btn btn-donate-now w-100">Donasi Sekarang!</button>
+          <Link
+            to={`/campaign/${data.url}/donation`}
+            className="btn btn-donate-now w-100"
+          >
+            Donasi Sekarang
+          </Link>
         </div>
       </div>
     </div>
