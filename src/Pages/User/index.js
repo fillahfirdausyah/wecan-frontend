@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
+
+import api from "../../Helpers/ApiEndpoint";
 
 import TopNav from "../../Component/TopNav";
 import HeaderNav from "../../Component/HeaderNav";
@@ -14,6 +16,26 @@ import { GoInfo } from "react-icons/go";
 import { FiLogOut } from "react-icons/fi";
 
 function UserPage() {
+  const [userData, setUserData] = useState({});
+  const [wallet, setWallet] = useState({});
+  let token = localStorage.getItem("token");
+  useEffect(() => {
+    api
+      .get("/api/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => setUserData(res.data));
+    api
+      .get("/api/wallet", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => setWallet(res.data));
+  }, []);
+
   return (
     <div className="max-w-screen-sm">
       <TopNav>
@@ -26,13 +48,13 @@ function UserPage() {
             alt=""
           />
           <div className="profile-content">
-            <span className="user-fullname">Fillah Akbar Firdausyah</span>
+            <span className="user-fullname">{userData.username}</span>
             <button className="btn btn-sm btn-outline-primary btn-edit-profile">
               Edit Profile
             </button>
           </div>
         </div>
-        <MenuItem title="Dompet Kebaikan" wallet={true}>
+        <MenuItem title="Dompet Kebaikan" wallet={true} data={wallet}>
           <IoWalletOutline className="menu-item-icon" />
         </MenuItem>
         <MenuItem title="Campaign Saya">
