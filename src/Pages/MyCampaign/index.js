@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 
+import api from "../../Helpers/ApiEndpoint";
 import { Link } from "react-router-dom";
 
 import TopNav from "../../Component/TopNav";
@@ -9,6 +10,19 @@ import BottomNav from "../../Component/BottomNav";
 import CardCampaign from "../../Component/CardCampaign";
 
 function MyCampaignPage() {
+  const [myCampaign, setMyCampaign] = useState([]);
+  let token = localStorage.getItem("token");
+
+  useEffect(() => {
+    api
+      .get("/api/my-campaign", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => setMyCampaign(res.data));
+  }, []);
+
   return (
     <div className="max-w-screen-sm">
       <TopNav>
@@ -28,9 +42,11 @@ function MyCampaignPage() {
           </div>
         </div>
         <div className="my-campaign-content-wrapper">
-          <CardCampaign />
-          <CardCampaign />
-          <CardCampaign />
+          {myCampaign.map((x) => (
+            <div key={x.id}>
+              <CardCampaign data={x} />
+            </div>
+          ))}
         </div>
       </div>
       <BottomNav />
