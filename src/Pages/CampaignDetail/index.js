@@ -51,7 +51,9 @@ function CampaignDetailPage() {
             <h4>Doa-doa #OrangBaik</h4>
           </div>
           {data.comment.map((x) => (
-            <CardPyrayers data={x} />
+            <div key={x.id}>
+              <CardPyrayers data={x} />
+            </div>
           ))}
         </div>
         <div className="see-all-prayers-button btn-primary">
