@@ -21,6 +21,11 @@
   font-weight: 600;
 }
 
+.campaign-form-controll input[disabled] {
+  background-color: rgb(83, 83, 83);;
+  cursor: not-allowed;
+}
+
 .campaign-form-controll input {
   width: 100%;
   padding: 0.75rem;
