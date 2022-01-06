@@ -20,12 +20,11 @@ function CardPyrayers({ data }) {
               />
             </figure>
             <div className="card-prayers-user-info">
-              <p>{data.username}</p>
+              <p>{data.name}</p>
               <div className="card-prayers-user-subinfo">
                 <Moment element="span" fromNow locale="id">
-                {data.created_at}
+                  {data.created_at}
                 </Moment>
-                {/* <span>42 menit yang lalu</span> */}
               </div>
             </div>
           </div>
