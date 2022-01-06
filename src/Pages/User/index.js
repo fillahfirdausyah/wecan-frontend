@@ -69,7 +69,7 @@ function UserPage() {
         <MenuItem title="Pengaturan">
           <BsGear className="menu-item-icon" />
         </MenuItem>
-        <MenuItem title="Logout">
+        <MenuItem isLogout={true} title="Logout">
           <FiLogOut className="menu-item-icon" />
         </MenuItem>
       </div>
