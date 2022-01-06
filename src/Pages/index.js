@@ -8,6 +8,10 @@ import MyCampaignPage from "./MyCampaign";
 import DonationPage from "./Donation";
 import DonationHistoryPage from "./DonationHistory";
 import NotFoundPage from "./NotFound";
+import RegisterPage from "./Register";
+import WalletPage from "./Wallet";
+import MakeWalletpage from "./MakeWallet";
+import TopupWalletPage from "./TopupWallet";
 
 export {
   HomePage,
@@ -20,4 +24,8 @@ export {
   DonationPage,
   DonationHistoryPage,
   NotFoundPage,
+  RegisterPage,
+  WalletPage,
+  MakeWalletpage,
+  TopupWalletPage,
 };
