@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 
 import api from "../../Helpers/ApiEndpoint";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+import CurrencyFormat from "react-currency-format";
 
 import TopNav from "../../Component/TopNav";
 import HeaderNav from "../../Component/HeaderNav";
-
-import { FaMoneyBillWave } from "react-icons/fa";
+import BottomNav from "../../Component/BottomNav";
 
 function WalletPage() {
   const token = localStorage.getItem("token");
@@ -48,17 +48,26 @@ function WalletPage() {
             <span>
               <sup>Rp</sup>
             </span>
-            <span className="saldo">0</span>
+            <span className="saldo">
+              <CurrencyFormat
+                decimalSeparator={""}
+                isNumericString={true}
+                value={wallet.balance}
+                displayType={"text"}
+                thousandSeparator="."
+                renderText={(value) => <>{value}</>}
+              />
+            </span>
           </div>
         </div>
 
         <div className="wallet-box-container">
-          <div className="wrapper">
-            <FaMoneyBillWave />
-            <p>Isi Saldo</p>
-          </div>
+          <Link to="/wallet/topup" className="btn btn-primary">
+            Isi Saldo
+          </Link>
         </div>
       </div>
+      <BottomNav />
     </div>
   );
 }
