@@ -8,7 +8,7 @@ import CurrencyFormat from "react-currency-format";
 import Moment from "react-moment";
 import "moment/locale/id";
 
-function CardInfo({ data }) {
+function CardInfo({ data, donation }) {
   const presentage = (data.collected / data.goal) * 100;
   return (
     <div className="card-campaign-detail-info">
@@ -55,7 +55,7 @@ function CardInfo({ data }) {
         </div>
         <div className="info">
           <span>
-            <strong>2170</strong> Donasi
+            <strong>{donation}</strong> Donasi
           </span>
           <div>
             <Moment diff={new Date()} element="strong" unit="days" locale="id">
