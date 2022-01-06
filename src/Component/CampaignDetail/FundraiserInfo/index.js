@@ -17,7 +17,7 @@ function FundraiserInfo({ data }) {
           <div className="fundraiser-info">
             <div className="fundraiser-name-container">
               <div className="fundraiser-name">
-                <p>{data.username}</p>
+                <p>{data.name}</p>
                 <img
                   src="https://assets.kitabisa.cc/images/icons/icon_verified.svg"
                   alt=""
