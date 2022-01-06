@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation, useHistory, Link } from "react-router-dom";
 import { useAuth } from "../../Helpers/AuthContext";
 import api from "../../Helpers/ApiEndpoint";
 
@@ -96,6 +96,12 @@ function LoginPage() {
               ) : (
                 <button className="btn btn-primary w-100">Masuk</button>
               )}
+            </div>
+            <p>Atau</p>
+            <div className="btn-login">
+              <Link to="/register" className="btn btn-info w-100">
+                Daftar
+              </Link>
             </div>
           </form>
         </div>
