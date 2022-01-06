@@ -31,7 +31,7 @@ function LoginPage() {
 
       let theData = await api.post("/api/login", userData);
       login(theData.data.token);
-      history.push(state.from.pathname);
+      history.push("/user");
     } catch (err) {
       setErr(true);
       setTimeout(() => setErr(false), 5000);
