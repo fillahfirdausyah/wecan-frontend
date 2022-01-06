@@ -96,8 +96,8 @@ function DonationPage() {
           </div>
           <hr className="section-breaker" />
           <div className="user-info-container">
-            <span className="user-name">{userData.username}</span>
-            <span className="user-email">fillahfirdausyah22@gmail.com</span>
+            <span className="user-name">{userData.name}</span>
+            <span className="user-email">{userData.email}</span>
             <label htmlFor="donation-anonim">
               <span>Sembunyikan nama saya (donasi anonim)</span>
               <div className="form-check form-switch">
