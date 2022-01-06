@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 
 import api from "../../Helpers/ApiEndpoint";
+import { useAuth } from "../../Helpers/AuthContext";
+import { useHistory } from "react-router-dom";
 
 import TopNav from "../../Component/TopNav";
 import HeaderNav from "../../Component/HeaderNav";
@@ -18,7 +20,10 @@ import { FiLogOut } from "react-icons/fi";
 function UserPage() {
   const [userData, setUserData] = useState({});
   const [wallet, setWallet] = useState({});
+  const { logout } = useAuth();
+  const history = useHistory();
   let token = localStorage.getItem("token");
+
   useEffect(() => {
     api
       .get("/api/me", {
@@ -36,6 +41,15 @@ function UserPage() {
       .then((res) => setWallet(res.data));
   }, []);
 
+  const logOut = () => {
+    logout();
+    history.push("/");
+  };
+
+  const toWalletPage = () => {
+    history.push("/wallet");
+  };
+
   return (
     <div className="max-w-screen-sm">
       <TopNav>
@@ -44,17 +58,22 @@ function UserPage() {
       <div className="main-page-wrapper user-page">
         <div className="profile-section">
           <img
-            src="https://i.pinimg.com/736x/12/1c/55/121c55b356c4dd0ad7a743b70770d323.jpg"
+            src="https://assets.kitabisa.cc/images/icons/icon_anonymous-user.png"
             alt=""
           />
           <div className="profile-content">
-            <span className="user-fullname">{userData.username}</span>
+            <span className="user-fullname">{userData.name}</span>
             <button className="btn btn-sm btn-outline-primary btn-edit-profile">
               Edit Profile
             </button>
           </div>
         </div>
-        <MenuItem title="Dompet Kebaikan" wallet={true} data={wallet}>
+        <MenuItem
+          title="Dompet Kebaikan"
+          wallet={true}
+          data={wallet}
+          theFunction={toWalletPage}
+        >
           <IoWalletOutline className="menu-item-icon" />
         </MenuItem>
         <MenuItem title="Campaign Saya">
@@ -69,7 +88,7 @@ function UserPage() {
         <MenuItem title="Pengaturan">
           <BsGear className="menu-item-icon" />
         </MenuItem>
-        <MenuItem isLogout={true} title="Logout">
+        <MenuItem theFunction={logOut} title="Logout">
           <FiLogOut className="menu-item-icon" />
         </MenuItem>
       </div>
