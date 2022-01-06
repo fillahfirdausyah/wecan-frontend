@@ -25,10 +25,15 @@ export function AuthProvider({ children }) {
     setIsAuth(true);
   }
 
+  function logout() {
+    localStorage.removeItem("token");
+  }
+
   const value = {
     login,
     currentToken,
     isAuth,
+    logout,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
