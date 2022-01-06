@@ -34,7 +34,7 @@ function MakeCampaignPage() {
             Authorization: `Bearer ${token}`,
           },
         });
-        setFundraiserName(theData.data.username);
+        setFundraiserName(theData.data.name);
         setUserId(theData.data.id);
       } catch (err) {
         console.log(err);
