@@ -1,7 +1,12 @@
 import React from "react";
 import "./style.css";
 
-function DonationCard() {
+import CurrencyFormat from "react-currency-format";
+
+import Moment from "react-moment";
+import "moment/locale/id";
+
+function DonationCard({ data }) {
   return (
     <div className="donation-card-body">
       <img
@@ -9,12 +14,26 @@ function DonationCard() {
         alt=""
       />
       <div className="donation-card-info">
-        <span className="donation-card-username">Anonim</span>
+        <span className="donation-card-username">{data.name}</span>
         <span className="donation-card-amount-wrapper">
           Berdonasi sebesar{" "}
-          <span className="donation-card-amount">Rp 555.000</span>
+          <CurrencyFormat
+            decimalSeparator={""}
+            isNumericString={true}
+            value={data.amount}
+            displayType={"text"}
+            thousandSeparator="."
+            prefix={"Rp "}
+            renderText={(value) => (
+              <span className="donation-card-amount">{value}</span>
+            )}
+          />
         </span>
-        <span className="donation-card-time">sejam yang lalu</span>
+        <span className="donation-card-time">
+          <Moment fromNow locale="id">
+            {data.created_at}
+          </Moment>
+        </span>
       </div>
     </div>
   );
