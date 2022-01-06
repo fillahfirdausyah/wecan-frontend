@@ -20,6 +20,7 @@ function CampaignDetailPage() {
     campaign: {},
     user: {},
     comment: [],
+    donation: [],
   });
 
   useEffect(() => {
@@ -40,7 +41,7 @@ function CampaignDetailPage() {
         />
       </TopNav>
       <div className="main-page-wrapper campaign-detail">
-        <CardInfo data={data.campaign} />
+        <CardInfo data={data.campaign} donation={data.donation.length} />
         <hr className="section-breaker" />
         <FundraiserInfo data={data.user} />
         <hr className="section-breaker" />
@@ -64,12 +65,13 @@ function CampaignDetailPage() {
         </div>
         <hr className="section-breaker" />
         <div className="donation-card-wrapper">
-          <h4>Donasi (2463)</h4>
+          <h4>Donasi {`(${data.donation.length})`}</h4>
           <div className="donation-card-container">
-            <DonationCard />
-            <DonationCard />
-            <DonationCard />
-            <DonationCard />
+            {data.donation.map((x) => (
+              <div key={x.id}>
+                <DonationCard data={x} />
+              </div>
+            ))}
           </div>
         </div>
         <div className="see-all-prayers-button btn-primary">
