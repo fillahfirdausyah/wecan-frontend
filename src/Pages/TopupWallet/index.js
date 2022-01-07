@@ -8,6 +8,7 @@ import HeaderNav from "../../Component/HeaderNav";
 
 function TopupWalletPage() {
   const token = localStorage.getItem("token");
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const history = useHistory();
   const [balance, setBalance] = useState("");
 
@@ -18,7 +19,8 @@ function TopupWalletPage() {
       .post(
         "/api/wallet/topup",
         {
-          balance: balance,
+          user_id: userInfo.id,
+          amount: balance,
         },
         {
           headers: {

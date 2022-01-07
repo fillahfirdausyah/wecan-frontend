@@ -1,0 +1,46 @@
+.about-us-container {
+  padding: 16px;
+}
+
+.member-info-container {
+  width: 100%;
+  padding: 16px;
+}
+
+.card-campaign.member .image-campaign-wrapper.member {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.card-campaign.member .image-campaign-wrapper.member img {
+  border-radius: 50%;
+}
+
+.info-campagin-content.member {
+  justify-content: space-evenly;
+}
+
+.info-campagin-content.member .member-role {
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  font-size: 0.625rem;
+  align-items: center;
+  margin: 0.25em 0em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.copy-right {
+  padding: 16px;
+  text-align: center;
+}
+
+.copy-right h4 {
+  font-size: 14px;
+}
+
+.copy-right span {
+  font-size: 11px;
+  color: gray;
+}

@@ -48,3 +48,42 @@
 .notify-container {
   text-align: center;
 }
+
+.transaction-history-wrapper {
+  width: 100%;
+  padding: 16px;
+}
+
+.card-wallet-transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card-wallet-transaction .left-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-wallet-transaction .left-section .top-section {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.card-wallet-transaction .left-section .transaction-title {
+  font-size: 16px;
+  color: white;
+}
+
+.card-wallet-transaction .left-section span {
+  font-size: 10px;
+  color: gray;
+}
+
+.card-wallet-transaction .right-section span {
+  color: rgb(18, 197, 57);
+}

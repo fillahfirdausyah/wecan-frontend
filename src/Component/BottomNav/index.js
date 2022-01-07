@@ -56,11 +56,19 @@ function BottomNav() {
           <span>Donasi Saya</span>
         </NavLink>
       </div>
-      <div className="navbar-about-us navbar-default-style">
-        <div className="menu-icon-container">
-          <GoInfo className="icon" />
-        </div>
-        <span>Tentang Kami</span>
+      <div
+        className={
+          pathname == "/aboutus"
+            ? "navbar-home navbar-default-style active"
+            : "navbar-home navbar-default-style"
+        }
+      >
+        <NavLink to="/aboutus">
+          <div className="menu-icon-container">
+            <GoInfo className="icon" />
+          </div>
+          <span>Tentang Kami</span>
+        </NavLink>
       </div>
       <div
         className={

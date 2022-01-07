@@ -1,0 +1,23 @@
+.card-topup {
+  display: flex;
+  background-color: transparent;
+  margin: 1em 0em;
+  line-height: 1.25em;
+  padding: 0px 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-topup .user-info-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-topup .user-info-wrapper .user-name {
+  font-size: 19px;
+}
+
+.card-topup .user-info-wrapper .topup-nominal {
+  font-size: 13px;
+  color: rgb(177, 176, 176);
+}

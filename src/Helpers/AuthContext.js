@@ -9,6 +9,7 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentToken, setCurrentToken] = useState("");
   const [isAuth, setIsAuth] = useState(false);
+  const [userAuth, setUserAuth] = useState({});
 
   useEffect(() => {
     let theToken = localStorage.getItem("token");
@@ -19,14 +20,17 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
-  function login(token) {
+  function login(token, userInfo) {
     localStorage.setItem("token", token);
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
     setCurrentToken(token);
     setIsAuth(true);
   }
 
   function logout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("userInfo");
+    setUserAuth({});
   }
 
   const value = {
@@ -34,6 +38,7 @@ export function AuthProvider({ children }) {
     currentToken,
     isAuth,
     logout,
+    userAuth,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

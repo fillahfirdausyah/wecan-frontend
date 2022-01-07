@@ -16,6 +16,8 @@ import {
   WalletPage,
   MakeWalletpage,
   TopupWalletPage,
+  AdminPanelpage,
+  AboutUsPage,
 } from "../Pages/index";
 
 import ProtectedRoute from "./ProtectedRoute";
@@ -28,6 +30,12 @@ const Router = () => {
       <Switch>
         <Route path="/" exact>
           <HomePage />
+        </Route>
+        <Route path="/aboutus" exact>
+          <AboutUsPage />
+        </Route>
+        <Route path="/admin" exact>
+          <AdminPanelpage />
         </Route>
         <Route path="/login" exact>
           <LoginPage />

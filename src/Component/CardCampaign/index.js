@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+
+import api from "../../Helpers/ApiEndpoint";
 
 import Moment from "react-moment";
 import "moment/locale/id";
 
 import CurrencyFormat from "react-currency-format";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { Badge } from "react-bootstrap";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 function CardCampaign({ data }) {
-  let current = (data.collected / data.goal) * 100;
-  let today = new Date();
+  const current = (data.collected / data.goal) * 100;
+  const today = new Date();
+  const [isToggle, setIsToggle] = useState(false);
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const token = localStorage.getItem("token");
+
+  const changeToggle = () => setIsToggle(!isToggle);
+
+  const acceptCampaign = () => {
+    api
+      .get(`/api/campaign/accept/${data.url}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => window.location.reload());
+  };
 
   return (
     <>
@@ -23,7 +42,37 @@ function CardCampaign({ data }) {
           </div>
         </figure>
         <div className="info-campagin-content">
-          <span className="title-campaign">{data.title}</span>
+          <span className="title-campaign">
+            <span className="title-wrapper">{data.title}</span>
+            <Badge bg={data.status == "pending" ? "warning" : "success"}>
+              {data.status}
+            </Badge>
+            {userInfo.role == "admin" ? (
+              <div className="btn-action-wrapper">
+                <BsThreeDotsVertical
+                  className="btn-action"
+                  onClick={changeToggle}
+                />
+                <div
+                  className={
+                    isToggle
+                      ? "dropdown-btn-action"
+                      : "dropdown-btn-action hidden"
+                  }
+                >
+                  <button
+                    onClick={acceptCampaign}
+                    className="btn btn-primary btn-sm w-100 mb-2"
+                  >
+                    Terima
+                  </button>
+                  <button className="btn btn-danger btn-sm w-100">Tolak</button>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
+          </span>
           <div className="info-fundraiser">
             <span>Sinergi Kebaikan Umat</span>
             <img

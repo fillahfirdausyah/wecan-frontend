@@ -12,6 +12,8 @@ import RegisterPage from "./Register";
 import WalletPage from "./Wallet";
 import MakeWalletpage from "./MakeWallet";
 import TopupWalletPage from "./TopupWallet";
+import AdminPanelpage from "./AdminPanel";
+import AboutUsPage from "./AboutUs";
 
 export {
   HomePage,
@@ -28,4 +30,6 @@ export {
   WalletPage,
   MakeWalletpage,
   TopupWalletPage,
+  AdminPanelpage,
+  AboutUsPage,
 };

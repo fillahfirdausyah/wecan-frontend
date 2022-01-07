@@ -10,7 +10,7 @@ function FundraiserInfo({ data }) {
         <div className="fundraiser-user-container">
           <div className="fundraiser-avatar">
             <img
-              src="https://i.pinimg.com/736x/12/1c/55/121c55b356c4dd0ad7a743b70770d323.jpg"
+              src="https://assets.kitabisa.cc/images/icons/icon_anonymous-user.png"
               alt=""
             />
           </div>

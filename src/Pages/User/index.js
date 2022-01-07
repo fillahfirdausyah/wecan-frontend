@@ -12,7 +12,7 @@ import MenuItem from "../../Component/MenuItem";
 
 import { IoWalletOutline } from "react-icons/io5";
 import { BsGear } from "react-icons/bs";
-import { MdOutlineCampaign } from "react-icons/md";
+import { MdOutlineCampaign, MdOutlineAdminPanelSettings } from "react-icons/md";
 import { AiOutlineHistory } from "react-icons/ai";
 import { GoInfo } from "react-icons/go";
 import { FiLogOut } from "react-icons/fi";
@@ -50,6 +50,10 @@ function UserPage() {
     history.push("/wallet");
   };
 
+  const toAdminPanel = () => {
+    history.push("/admin");
+  };
+
   return (
     <div className="max-w-screen-sm">
       <TopNav>
@@ -76,6 +80,15 @@ function UserPage() {
         >
           <IoWalletOutline className="menu-item-icon" />
         </MenuItem>
+        {userData.role == "admin" ? (
+          <>
+            <MenuItem title="Admin Panel" theFunction={toAdminPanel}>
+              <MdOutlineAdminPanelSettings className="menu-item-icon" />
+            </MenuItem>
+          </>
+        ) : (
+          ""
+        )}
         <MenuItem title="Campaign Saya">
           <MdOutlineCampaign className="menu-item-icon" />
         </MenuItem>

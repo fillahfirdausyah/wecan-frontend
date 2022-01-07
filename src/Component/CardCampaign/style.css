@@ -47,6 +47,9 @@
 }
 
 .info-campagin-content .title-campaign {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
   font-weight: 600;
   font-size: 0.75rem;
   overflow: hidden;
@@ -56,6 +59,30 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.info-campagin-content .title-campaign .title-wrapper {
+  width: 60%;
+}
+
+.info-campagin-content .title-campaign .btn-action {
+  cursor: pointer;
+}
+
+.info-campagin-content .title-campaign .dropdown-btn-action {
+  position: absolute;
+  right: 20px;
+  z-index: 1111;
+  width: 150px;
+  height: 90px;
+  background-color: #282c34;
+  border-radius: 5px;
+  box-shadow: inset 0 0 1px grey;
+  padding: 10px 20px;
+}
+
+.info-campagin-content .title-campaign .dropdown-btn-action.hidden {
+  display: none;
 }
 
 .info-campagin-content .info-fundraiser {

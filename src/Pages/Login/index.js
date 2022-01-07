@@ -30,7 +30,7 @@ function LoginPage() {
       };
 
       let theData = await api.post("/api/login", userData);
-      login(theData.data.token);
+      login(theData.data.token, theData.data.user);
       history.push("/user");
     } catch (err) {
       setErr(true);

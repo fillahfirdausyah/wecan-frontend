@@ -1,20 +1,34 @@
 import React from "react";
 import "./style.css";
 
-function CardDonationHistory() {
+import Moment from "react-moment";
+import "moment/locale/id";
+
+import CurrencyFormat from "react-currency-format";
+
+function CardDonationHistory({ data }) {
   return (
     <div className="donation-history-content">
-      <img
-        src="https://img.kitabisa.cc/size/664x357/08309532-2469-4c9b-8315-1a978412effd.jpg"
-        alt=""
-      />
+      <img src={`http://localhost:8000/image/campaign/${data.cover}`} alt="" />
       <div className="campaign-detail">
-        <span className="campaign-title">
-          Sedekah untuk pedagang lansia dijalan
-        </span>
+        <span className="campaign-title">{data.title}</span>
         <div className="campaign-donation-date">
-          <span>07 Des 2021</span>
-          <span className="donation-amount">Rp63.000</span>
+          {/* <span>07 Des 2021</span> */}
+          <Moment element="span" fromNow locale="id">
+            {data.created_at}
+          </Moment>
+          {/* <span className="donation-amount">{data.amount}</span> */}
+          <CurrencyFormat
+            decimalSeparator={""}
+            isNumericString={true}
+            value={data.amount}
+            displayType={"text"}
+            thousandSeparator="."
+            prefix="Rp"
+            renderText={(value) => (
+              <span className="donation-amount">{value}</span>
+            )}
+          />
         </div>
       </div>
       <div className="donation-status">Berhasil</div>
