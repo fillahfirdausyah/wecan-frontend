@@ -34,9 +34,6 @@ const Router = () => {
         <Route path="/aboutus" exact>
           <AboutUsPage />
         </Route>
-        <Route path="/admin" exact>
-          <AdminPanelpage />
-        </Route>
         <Route path="/login" exact>
           <LoginPage />
         </Route>
@@ -46,28 +43,21 @@ const Router = () => {
         <Route path="/campaign/all" exact>
           <CampaignPage />
         </Route>
-        <Route path="/make/campaign" exact>
-          <MakeCampaignPage />
-        </Route>
         <Route path="/campaign/:name" exact>
           <CampaignDetailPage />
-        </Route>
-        <Route path="/wallet" exact>
-          <WalletPage />
-        </Route>
-        <Route path="/wallet/Make" exact>
-          <MakeWalletpage />
-        </Route>
-        <Route path="/wallet/topup" exact>
-          <TopupWalletPage />
         </Route>
         <ProtectedRoute
           path="/campaign/:name/donation"
           component={DonationPage}
         />
         <ProtectedRoute path="/user" component={UserPage} />
+        <ProtectedRoute path="/make/campaign" component={MakeCampaignPage} />
         <ProtectedRoute path="/my-campaign" component={MyCampaignPage} />
         <ProtectedRoute path="/my-donations" component={DonationHistoryPage} />
+        <ProtectedRoute path="/admin" component={AdminPanelpage} />
+        <ProtectedRoute path="/wallet" component={WalletPage} />
+        <ProtectedRoute path="/wallet/make" component={MakeWalletpage} />
+        <ProtectedRoute path="/wallet/topup" component={TopupWalletPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>
