@@ -3,6 +3,7 @@ import "./style.css";
 
 import api from "../../Helpers/ApiEndpoint";
 import { useHistory, Link } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 import CurrencyFormat from "react-currency-format";
 import Moment from "react-moment";
 import "moment/locale/id";
@@ -15,12 +16,14 @@ import { Badge } from "react-bootstrap";
 function WalletPage() {
   const token = localStorage.getItem("token");
   const history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
   const [wallet, setWallet] = useState({});
   const [trsaction, setTransaction] = useState([]);
 
   useEffect(() => {
     const getWallet = async () => {
       try {
+        setIsLoading(true);
         let res = await api.get("/api/wallet", {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -33,6 +36,8 @@ function WalletPage() {
         }
       } catch (err) {
         console.log(err);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -71,14 +76,18 @@ function WalletPage() {
               <sup>Rp</sup>
             </span>
             <span className="saldo">
-              <CurrencyFormat
-                decimalSeparator={""}
-                isNumericString={true}
-                value={wallet.balance}
-                displayType={"text"}
-                thousandSeparator="."
-                renderText={(value) => <>{value}</>}
-              />
+              {isLoading ? (
+                <Spinner animation="border"  />
+              ) : (
+                <CurrencyFormat
+                  decimalSeparator={""}
+                  isNumericString={true}
+                  value={wallet.balance}
+                  displayType={"text"}
+                  thousandSeparator="."
+                  renderText={(value) => <>{value}</>}
+                />
+              )}
             </span>
           </div>
         </div>

@@ -3,6 +3,7 @@ import "./style.css";
 
 import api from "../../Helpers/ApiEndpoint";
 import { useHistory } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 import TopNav from "../../Component/TopNav";
 import HeaderNav from "../../Component/HeaderNav";
@@ -10,6 +11,7 @@ import BottomNav from "../../Component/BottomNav";
 
 function MakeCampaignPage() {
   const history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
   const [fundraiserName, setFundraiserName] = useState("");
   const [userId, setUserId] = useState(0);
   const [coverCampaign, setCoverCampaign] = useState("");
@@ -62,34 +64,41 @@ function MakeCampaignPage() {
   const makeCampaign = async (e) => {
     e.preventDefault();
 
-    let newCampaignData = new FormData();
-    newCampaignData.append("user_id", userId);
-    newCampaignData.append("title", campaignData.title);
-    newCampaignData.append("description", campaignData.description);
-    newCampaignData.append("over", campaignData.over);
-    newCampaignData.append("goal", campaignData.goal);
-    newCampaignData.append("collected", 0);
-    newCampaignData.append("status", campaignData.status);
-    newCampaignData.append("url", campaignData.url);
-    newCampaignData.append("cover", coverCampaign);
+    try {
+      setIsLoading(true);
+      let newCampaignData = new FormData();
+      newCampaignData.append("user_id", userId);
+      newCampaignData.append("title", campaignData.title);
+      newCampaignData.append("description", campaignData.description);
+      newCampaignData.append("over", campaignData.over);
+      newCampaignData.append("goal", campaignData.goal);
+      newCampaignData.append("collected", 0);
+      newCampaignData.append("status", campaignData.status);
+      newCampaignData.append("url", campaignData.url);
+      newCampaignData.append("cover", coverCampaign);
 
-    await api.post("api/campaign/add", newCampaignData, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+      await api.post("api/campaign/add", newCampaignData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    setCampaignData({
-      title: "",
-      description: "",
-      over: "",
-      goal: "",
-      collected: "",
-      status: false,
-      url: "",
-    });
+      setCampaignData({
+        title: "",
+        description: "",
+        over: "",
+        goal: "",
+        collected: "",
+        status: false,
+        url: "",
+      });
 
-    history.push("/my-campaign");
+      history.push("/my-campaign");
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -186,9 +195,15 @@ function MakeCampaignPage() {
                 </div>
               </div>
               <hr className="form-breaker" />
-              <button type="submit" className="btn btn-primary w-100">
-                Buat Campaign
-              </button>
+              {isLoading ? (
+                <button type="submit" className="btn btn-primary w-100">
+                  <Spinner animation="border" size="sm" />
+                </button>
+              ) : (
+                <button type="submit" className="btn btn-primary w-100">
+                  Buat Campaign
+                </button>
+              )}
             </form>
           </div>
         </div>

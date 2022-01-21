@@ -24,7 +24,7 @@ function CardLink({ data }) {
         <div className="large-list-container">
           <figure className="large-list-figure">
             <img
-              src={`http://localhost:8000/image/campaign/${data.cover}`}
+              src={`https://api-wecan.herokuapp.com/image/campaign/${data.cover}`}
               alt=""
             />
           </figure>

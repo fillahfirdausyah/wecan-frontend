@@ -9,7 +9,7 @@ import CurrencyFormat from "react-currency-format";
 function CardDonationHistory({ data }) {
   return (
     <div className="donation-history-content">
-      <img src={`http://localhost:8000/image/campaign/${data.cover}`} alt="" />
+      <img src={`https://api-wecan.herokuapp.com/image/campaign/${data.cover}`} alt="" />
       <div className="campaign-detail">
         <span className="campaign-title">{data.title}</span>
         <div className="campaign-donation-date">

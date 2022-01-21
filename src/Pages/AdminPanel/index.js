@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 
 import api from "../../Helpers/ApiEndpoint";
-import { Badge } from "react-bootstrap";
+import { Badge, Spinner } from "react-bootstrap";
 
 import TopNav from "../../Component/TopNav";
 import HeaderNav from "../../Component/HeaderNav";
@@ -15,10 +15,12 @@ function AdminPanelpage() {
   const [sectionActive, setSectionActive] = useState("topup");
   const [campaignData, setCampaignData] = useState([]);
   const [topupData, setTopupData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getDataFromApi = async () => {
       try {
+        setIsLoading(true);
         let campaignPendingResult = await api.get("/api/campaign/pending", {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -34,6 +36,8 @@ function AdminPanelpage() {
         setTopupData(topUpPendingResult.data);
       } catch (err) {
         console.log(err);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -64,12 +68,18 @@ function AdminPanelpage() {
               onClick={changeSectionTopup}
             >
               Topup{" "}
-              {topupData.length > 0 ? (
-                <Badge className="mx-1" bg="success">
-                  {topupData.length}
-                </Badge>
+              {isLoading ? (
+                <Spinner animation="border" size="sm" />
               ) : (
-                ""
+                <>
+                  {topupData.length > 0 ? (
+                    <Badge className="mx-1" bg="success">
+                      {topupData.length}
+                    </Badge>
+                  ) : (
+                    ""
+                  )}
+                </>
               )}
             </span>
             <span

@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 import api from "../../Helpers/ApiEndpoint";
 
+import { Spinner } from "react-bootstrap";
 import { BiCheck } from "react-icons/bi";
 import CurrencyFormat from "react-currency-format";
 
 function CardTopup({ data }) {
   const token = localStorage.getItem("token");
+  const [isLoading, setIsLoading] = useState(false);
   const acceptTopup = async () => {
     try {
+      setIsLoading(true);
       let result = await api.get(
         `/api/topup/accept/${data.id}/${data.user_id}`,
         {
@@ -21,6 +24,7 @@ function CardTopup({ data }) {
     } catch (err) {
       console.log(err);
     } finally {
+      setIsLoading(false);
       window.location.reload();
     }
   };
@@ -42,9 +46,15 @@ function CardTopup({ data }) {
         </span>
       </div>
       <div className="btn-action-wrapper">
-        <button onClick={acceptTopup} className="btn btn-primary">
-          <BiCheck />
-        </button>
+        {isLoading ? (
+          <button className="btn btn-primary">
+            <Spinner animation="border" size="sm" />
+          </button>
+        ) : (
+          <button onClick={acceptTopup} className="btn btn-primary">
+            <BiCheck />
+          </button>
+        )}
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ function CardInfo({ data, donation }) {
     <div className="card-campaign-detail-info">
       <div className="hero-image-container">
         <img
-          src={`http://localhost:8000/image/campaign/${data.cover}`}
+          src={`https://api-wecan.herokuapp.com/image/campaign/${data.cover}`}
           alt=""
         />
       </div>

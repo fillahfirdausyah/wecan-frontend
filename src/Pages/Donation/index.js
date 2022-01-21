@@ -4,6 +4,7 @@ import "./style.css";
 import api from "../../Helpers/ApiEndpoint";
 import { useParams, useHistory } from "react-router-dom";
 import CurrencyFormat from "react-currency-format";
+import { Spinner } from "react-bootstrap";
 
 import TopNav from "../../Component/TopNav";
 import HeaderNav from "../../Component/HeaderNav";
@@ -12,6 +13,7 @@ function DonationPage() {
   let token = localStorage.getItem("token");
   const history = useHistory();
   const { name } = useParams();
+  const [isLoading, setIsLoading] = useState(false);
   const [userData, setUserData] = useState({});
   const [wallet, setWallet] = useState({});
 
@@ -19,20 +21,29 @@ function DonationPage() {
   const [comment, setComment] = useState("");
 
   useEffect(() => {
-    api
-      .get("/api/me", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => setUserData(res.data));
-    api
-      .get("/api/wallet", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => setWallet(res.data));
+    const getDataFromApi = async () => {
+      try {
+        setIsLoading(true);
+        let userResult = await api.get("/api/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUserData(userResult.data);
+        let walletResult = await api.get("/api/wallet", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setWallet(walletResult.data);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    getDataFromApi();
   }, []);
 
   const payDonation = async (e) => {
@@ -41,8 +52,8 @@ function DonationPage() {
       amount,
       content: comment,
     };
-
     try {
+      setIsLoading(true);
       let res = await api.post(`/api/campaign/donation/pay/${name}`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -54,6 +65,8 @@ function DonationPage() {
       }
     } catch (err) {
       console.log(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -82,15 +95,19 @@ function DonationPage() {
               </div>
               <p className="wallet-balance">
                 Saldo dompet kebaikan:{" "}
-                <CurrencyFormat
-                  decimalSeparator={""}
-                  isNumericString={true}
-                  value={wallet.balance}
-                  displayType={"text"}
-                  thousandSeparator="."
-                  prefix={"Rp "}
-                  renderText={(value) => <>{value}</>}
-                />
+                {isLoading ? (
+                  <Spinner animation="border" size="sm" />
+                ) : (
+                  <CurrencyFormat
+                    decimalSeparator={""}
+                    isNumericString={true}
+                    value={wallet.balance}
+                    displayType={"text"}
+                    thousandSeparator="."
+                    prefix={"Rp "}
+                    renderText={(value) => <>{value}</>}
+                  />
+                )}
               </p>
             </div>
           </div>
@@ -121,9 +138,19 @@ function DonationPage() {
           </div>
           <div className="button-subtmit-container">
             <div className="button-submit-inner">
-              <button>
-                <span>Lanjutkan Pembayaran</span>
-              </button>
+              {amount > wallet.balance ? (
+                <button disabled>
+                  <span>Saldo anda tidak cukup</span>
+                </button>
+              ) : (
+                <button>
+                  {isLoading ? (
+                    <Spinner animation="border" size="sm" />
+                  ) : (
+                    <span>Lanjutkan Pembayaran</span>
+                  )}
+                </button>
+              )}
             </div>
           </div>
         </form>
