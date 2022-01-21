@@ -17,21 +17,27 @@ function AdminPanelpage() {
   const [topupData, setTopupData] = useState([]);
 
   useEffect(() => {
-    api
-      .get("/api/campaign/pending", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => setCampaignData(res.data));
+    const getDataFromApi = async () => {
+      try {
+        let campaignPendingResult = await api.get("/api/campaign/pending", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setCampaignData(campaignPendingResult.data);
 
-    api
-      .get("/api/topup/pending", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => setTopupData(res.data));
+        let topUpPendingResult = await api.get("/api/topup/pending", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setTopupData(topUpPendingResult.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    getDataFromApi();
   }, []);
 
   const changeSectionTopup = () => {
