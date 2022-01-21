@@ -8,14 +8,21 @@ import CurrencyFormat from "react-currency-format";
 
 function CardTopup({ data }) {
   const token = localStorage.getItem("token");
-  const acceptTopup = () => {
-    api
-      .get(`/api/topup/accept/${data.id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => window.location.reload());
+  const acceptTopup = async () => {
+    try {
+      let result = await api.get(
+        `/api/topup/accept/${data.id}/${data.user_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+    } catch (err) {
+      console.log(err);
+    } finally {
+      window.location.reload();
+    }
   };
 
   return (
