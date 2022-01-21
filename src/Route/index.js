@@ -55,9 +55,9 @@ const Router = () => {
         <ProtectedRoute path="/my-campaign" component={MyCampaignPage} />
         <ProtectedRoute path="/my-donations" component={DonationHistoryPage} />
         <ProtectedRoute path="/admin" component={AdminPanelpage} />
-        <ProtectedRoute path="/wallet" component={WalletPage} />
-        <ProtectedRoute path="/wallet/make" component={MakeWalletpage} />
         <ProtectedRoute path="/wallet/topup" component={TopupWalletPage} />
+        <ProtectedRoute path="/wallet/make" component={MakeWalletpage} />
+        <ProtectedRoute path="/wallet" component={WalletPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>
